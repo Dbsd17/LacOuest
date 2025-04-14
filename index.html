@@ -131,7 +131,7 @@
                 <h3 data-translate="information">Informations</h3>
                 <p><i class="fas fa-map-marker-alt"></i> <span data-translate="address">7 Rue de la Harpe, 75005 Paris (Saint-Michel)</span></p>
                 <p><i class="fas fa-phone"></i> 01 43 54 39 68</p>
-                <p><i class="fas fa-envelope"></i> contact@lacdelouest.com</p>
+                <p><i class="fas fa-envelope"></i> lacdelouest@gmail.com</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -143,28 +143,31 @@
                 <p data-translate="thu_sun">Jeudi - Dimanche: 11h - 23h30</p>
             </div>
             <div class="contact-form">
-                <form id="reservation-form">
+                <form id="reservation-form" method="POST" action="https://formspree.io/f/xgvaqany" accept-charset="UTF-8">
                     <h3 data-translate="book_table">Réserver une table</h3>
                     <div class="form-group">
-                        <input type="text" id="name" placeholder="Votre nom" data-translate-placeholder="your_name" required>
+                        <input type="text" name="name" placeholder="Votre nom" data-translate-placeholder="your_name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" placeholder="Votre email" data-translate-placeholder="your_email" required>
+                        <input type="email" name="email" placeholder="Votre email" data-translate-placeholder="your_email" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" id="phone" placeholder="Votre téléphone" data-translate-placeholder="your_phone" required>
+                        <input type="tel" name="phone" placeholder="Votre téléphone" data-translate-placeholder="your_phone" required>
                     </div>
                     <div class="form-group">
-                        <input type="date" id="date" required>
+                        <input type="date" name="date" required>
                     </div>
                     <div class="form-group">
-                        <input type="time" id="time" required>
+                        <input type="time" name="time" required>
                     </div>
                     <div class="form-group">
-                        <input type="number" id="guests" placeholder="Nombre de personnes" data-translate-placeholder="number_guests" min="1" required>
+                        <input type="number" name="guests" placeholder="Nombre de personnes" data-translate-placeholder="number_guests" min="1" required>
                     </div>
                     <button type="submit" class="btn" data-translate="reserve">Réserver</button>
                 </form>
+                <div id="form-message" style="display: none; margin-top: 1em;"></div>
+                
+
             </div>
         </div>
     </section>

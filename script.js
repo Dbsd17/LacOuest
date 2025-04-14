@@ -217,3 +217,57 @@ document.addEventListener('DOMContentLoaded', function() {
      const savedLang = localStorage.getItem('preferredLanguage') || 'fr';
      translatePage(savedLang);
  });
+
+ <script>
+document.getElementById('reservation-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const message = document.getElementById('form-message');
+    const lang = document.documentElement.lang || 'fr';
+
+    fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            message.textContent = translateFormMessage('success', lang);
+            message.style.display = "block";
+            message.style.color = "green";
+            form.reset();
+        } else {
+            message.textContent = translateFormMessage('error', lang);
+            message.style.display = "block";
+            message.style.color = "red";
+        }
+    }).catch(error => {
+        message.textContent = translateFormMessage('network', lang);
+        message.style.display = "block";
+        message.style.color = "red";
+    });
+});
+
+function translateFormMessage(type, lang) {
+    const messages = {
+        fr: {
+            success: "Votre réservation a été envoyée avec succès.",
+            error: "Une erreur est survenue. Veuillez réessayer.",
+            network: "Erreur de connexion. Veuillez vérifier votre réseau."
+        },
+        en: {
+            success: "Your reservation has been sent successfully.",
+            error: "An error occurred. Please try again.",
+            network: "Network error. Please check your connection."
+        },
+        zh: {
+            success: "您的预订已成功发送。",
+            error: "发生错误。请重试。",
+            network: "网络错误。请检查您的连接。"
+        }
+    };
+    return messages[lang]?.[type] || messages["fr"][type];
+}
+</script>
