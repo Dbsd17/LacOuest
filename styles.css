@@ -25,14 +25,25 @@ a {
     border-radius: 30px;
     font-weight: 600;
     transition: all 0.3s ease;
-    border: none;
+    border: 2px solid #d4af37; /* Ajout d'une bordure de la même couleur */
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
+/* Effet de fond transparent au survol */
 .btn:hover {
-    background: #c19b2e;
+    background: rgba(212, 175, 55, 0.8); /* Fond semi-transparent */
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Effet au clic */
+.btn:active {
+    background: rgba(212, 175, 55, 0.5); /* Fond encore plus transparent au clic */
+    transform: translateY(-1px); /* Moins de déplacement vertical au clic */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre plus légère au clic */
 }
 
 .section-title {
@@ -160,18 +171,25 @@ nav {
 .tab-btn {
     padding: 10px 25px;
     margin: 0 10px;
-    background: none;
+    background: transparent;
     border: 2px solid #d4af37;
     color: #d4af37;
     border-radius: 30px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .tab-btn:hover, .tab-btn.active {
-    background: #d4af37;
-    color: #fff;
+    background: rgba(212, 175, 55, 0.2); /* Fond légèrement transparent */
+    color: #d4af37;
+}
+
+.tab-btn:active {
+    background: rgba(212, 175, 55, 0.4); /* Fond plus visible au clic */
+    transform: scale(0.98); /* Légère réduction au clic */
 }
 
 .menu-items {
@@ -499,6 +517,28 @@ footer {
     }
 }
 
+/* CSS pour l'effet d'ondulation */
+.btn, .tab-btn, .lang-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     nav {
@@ -581,12 +621,12 @@ footer {
     }
     
     /* Pour la version mobile */
-    @media (max-width: 768px) {
-        .opening-hours-banner {
-            font-size: 0.9rem;
-            padding: 8px 15px;
-        }
+    .opening-hours-banner {
+        font-size: 0.9rem;
+        padding: 8px 15px;
     }
+}
+
 /* Style du sélecteur de langue */
 .language-switcher {
     position: relative;
@@ -595,18 +635,32 @@ footer {
 }
 
 .lang-btn {
-    background: #f5f5f5;
-    border: none;
+    background: transparent;
+    border: 2px solid #d4af37;
+    color: #d4af37;
     padding: 8px 15px;
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
+    min-width: 50px;
+    text-align: center;
 }
 
 .lang-btn:hover {
-    background: #d4af37;
-    color: white;
+    background: rgba(212, 175, 55, 0.2);
+    color: #d4af37;
+}
+
+.lang-btn:active {
+    background: rgba(212, 175, 55, 0.4);
+    transform: scale(0.95);
+}
+
+.lang-btn.active {
+    background: rgba(212, 175, 55, 0.3);
+    border: 2px solid #d4af37;
+    color: #d4af37;
 }
 
 .language-dropdown {
@@ -625,54 +679,32 @@ footer {
     padding: 10px 15px;
     display: block;
     text-align: left;
-}
-
-.language-dropdown a:hover {
-    background: #f5f5f5;
-    color: #d4af37;
-}
-
-.language-switcher:hover .language-dropdown {
-    display: block;
-}
-
-
-/* Mettez à jour ou ajoutez ces styles */
-.lang-btn {
-    background: transparent;
-    border: 2px solid #d4af37;
-    color: #d4af37;
-    padding: 8px 15px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    min-width: 50px;
-    text-align: center;
-}
-
-.lang-btn.active {
-    background: rgba(212, 175, 55, 0.2);
-    border: 2px solid #d4af37;
-    color: #d4af37;
-}
-
-.language-dropdown a {
-    color: #333;
-    padding: 10px 15px;
-    display: block;
-    text-align: left;
     border-radius: 5px;
     margin: 5px;
     transition: all 0.3s ease;
     border: 1px solid transparent;
 }
 
-.language-dropdown a:hover, 
-.language-dropdown a.active {
+.language-dropdown a:hover {
     background: rgba(212, 175, 55, 0.1);
     border: 1px solid #d4af37;
     color: #d4af37;
+}
+
+.language-dropdown a:active {
+    background: rgba(212, 175, 55, 0.3);
+    transform: scale(0.98);
+}
+
+.language-dropdown a.active {
+    background: rgba(212, 175, 55, 0.2);
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.language-switcher:hover .language-dropdown {
+    display: block;
 }
 
 /* Pour le bouton de langue actif dans le dropdown */
@@ -696,6 +728,4 @@ footer {
         left: 50%;
         transform: translateX(-50%);
     }
-}
-
 }

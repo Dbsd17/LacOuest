@@ -192,47 +192,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Mettre à jour les attributs de langue
         document.documentElement.lang = lang;
-    }
-
-    // Gestionnaire d'événements pour les boutons de langue
-    document.querySelectorAll('.language-dropdown a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const lang = this.getAttribute('data-lang');
-            translatePage(lang);
-        });
-    });
-
-    // Détection de la langue au chargement
-    function detectLanguage() {
-        const savedLang = localStorage.getItem('preferredLanguage');
-        const browserLang = navigator.language.substring(0, 2);
         
-        if (savedLang) {
-            return savedLang;
-        } else if (['fr', 'en', 'zh'].includes(browserLang)) {
-            return browserLang;
-        } else {
-            return 'fr'; // Langue par défaut
-        }
-    }
-
-    // Initialiser la page avec la langue détectée
-    translatePage(detectLanguage());
-
-    // Menu items data
-    const menuItems = {
-        entrees: [
-            {
-                name: translations[detectLanguage()].entree1_name || "Tartare de saumon",
-                price: "14€",
-                description: translations[detectLanguage()].entree1_desc || "Saumon frais, avocat, citron vert et coriandre",
-                image: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-            },
-            // ... autres items du menu ...
-        ],
-        // ... autres catégories ...
-    };
-
-    // ... reste du code existant (gestion du menu, formulaires, etc.) ...
-});
+        // Mettre à jour la classe active sur les liens de langue
+        document.querySelectorAll('.language-dropdown a').forEach(link => {
+            link.classList.remove('active-fr', 'active-en', 'active-zh');
+            if (link.getAttribute('data-lang') === lang) {
+                link.classList.add('active-' + lang);
+            }
+        });
