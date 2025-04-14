@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lac de l'Ouest - Restaurant gastronomique</title>
+    <title>Lac de l'Ouest - Restaurant gastronomique asiatique</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -14,18 +14,13 @@
                 <h1>Lac de l'Ouest</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#galerie">Galerie</a></li>
-                <li><a href="#apropos">À propos</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#accueil" data-translate="accueil">Accueil</a></li>
+                <li><a href="#menu" data-translate="menu">Menu</a></li>
+                <li><a href="#galerie" data-translate="galerie">Galerie</a></li>
+                <li><a href="#apropos" data-translate="apropos">À propos</a></li>
+                <li><a href="#contact" data-translate="contact">Contact</a></li>
             </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-
+            
             <div class="language-switcher">
                 <button id="language-btn" class="lang-btn">FR</button>
                 <div class="language-dropdown">
@@ -34,28 +29,33 @@
                     <a href="#" data-lang="zh">中文</a>
                 </div>
             </div>
-            
+
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
         </nav>
     </header>
 
     <section id="accueil" class="hero">
         <div class="hero-content">
-            <h2>Bienvenue au Lac de l'Ouest</h2>
-            <p>Une expérience culinaire asiatique authentique au cœur de Paris</p>
+            <h2 data-translate="welcome">Bienvenue au Lac de l'Ouest</h2>
+            <p data-translate="slogan">Une expérience culinaire asiatique authentique au cœur de Paris</p>
             <div class="opening-hours-banner">
-                <p>Ouvert tous les jours 11h-23h30 <span class="closed-day">(Fermé le mercredi)</span></p>
+                <p data-translate="opening_hours">Ouvert tous les jours 11h-23h30 <span class="closed-day" data-translate="closed_wed">(Fermé le mercredi)</span></p>
             </div>
-            <a href="#reservation" class="btn">Réserver une table</a>
+            <a href="#reservation" class="btn" data-translate="reserve">Réserver une table</a>
         </div>
     </section>
 
     <section id="menu" class="menu-section">
-        <h2 class="section-title">Notre Menu</h2>
+        <h2 class="section-title" data-translate="our_menu">Notre Menu</h2>
         <div class="menu-tabs">
-            <button class="tab-btn active" data-category="entrees">Entrées</button>
-            <button class="tab-btn" data-category="plats">Plats principaux</button>
-            <button class="tab-btn" data-category="desserts">Desserts</button>
-            <button class="tab-btn" data-category="boissons">Boissons</button>
+            <button class="tab-btn active" data-category="entrees" data-translate="entrees">Entrées</button>
+            <button class="tab-btn" data-category="plats" data-translate="plats">Plats principaux</button>
+            <button class="tab-btn" data-category="desserts" data-translate="desserts">Desserts</button>
+            <button class="tab-btn" data-category="boissons" data-translate="boissons">Boissons</button>
         </div>
         
         <div class="menu-items">
@@ -64,7 +64,7 @@
     </section>
 
     <section id="galerie" class="gallery-section">
-        <h2 class="section-title">Galerie</h2>
+        <h2 class="section-title" data-translate="galerie">Galerie</h2>
         <div class="gallery-container">
             <div class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Intérieur du restaurant">
@@ -83,29 +83,29 @@
 
     <section id="apropos" class="about-section">
         <div class="about-content">
-            <h2 class="section-title">Bienvenue au Lac de l'Ouest</h2>
-            <p>Fondée en 1962, la maison Lac de l'Ouest est une institution culinaire qui allie tradition et innovation. Situé dans un cadre chaleureux et accueillant, notre restaurant vous invite à un voyage gustatif à travers l'Asie, en vous proposant une cuisine thaïlandaise, chinoise et vietnamienne authentique.</p>
+            <h2 class="section-title" data-translate="about_title">Bienvenue au Lac de l'Ouest</h2>
+            <p data-translate="about_p1">Fondée en 1962, la maison Lac de l'Ouest est une institution culinaire qui allie tradition et innovation. Situé dans un cadre chaleureux et accueillant, notre restaurant vous invite à un voyage gustatif à travers l'Asie.</p>
             
-            <h3>Une Histoire de Saveurs</h3>
-            <p>Depuis plus de six décennies, nous nous efforçons de préserver l'essence des recettes asiatiques tout en les adaptant aux goûts contemporains. Chaque plat est préparé avec des ingrédients frais et de qualité, sélectionnés avec soin pour vous offrir une expérience culinaire inoubliable.</p>
+            <h3 data-translate="history_title">Une Histoire de Saveurs</h3>
+            <p data-translate="history_p">Depuis plus de six décennies, nous préservons l'essence des recettes asiatiques tout en les adaptant aux goûts contemporains. Chaque plat est préparé avec des ingrédients frais et de qualité.</p>
             
-            <h3>Une Cuisine Raffinée</h3>
-            <p>Notre menu varié vous propose une sélection de plats traditionnels et modernes, préparés par nos chefs passionnés. Des saveurs épicées de la cuisine thaïlandaise aux délicates nuances de la cuisine vietnamienne, en passant par les classiques de la gastronomie chinoise, chaque bouchée est une invitation à découvrir la richesse de la cuisine asiatique.</p>
+            <h3 data-translate="cuisine_title">Une Cuisine Raffinée</h3>
+            <p data-translate="cuisine_p">Notre menu varié vous propose une sélection de plats traditionnels et modernes, préparés par nos chefs passionnés.</p>
             
-            <h3>Un Cadre Convivial</h3>
-            <p>Que vous veniez en famille, entre amis ou pour un dîner romantique, le Lac de l'Ouest vous accueille dans une ambiance conviviale et chaleureuse. Notre équipe dévouée est là pour vous assurer un service impeccable et rendre votre visite mémorable.</p>
+            <h3 data-translate="atmosphere_title">Un Cadre Convivial</h3>
+            <p data-translate="atmosphere_p">Que vous veniez en famille, entre amis ou pour un dîner romantique, le Lac de l'Ouest vous accueille dans une ambiance conviviale et chaleureuse.</p>
             
-            <h3>Rejoignez-nous</h3>
-            <p>Venez découvrir le Lac de l'Ouest et laissez-vous séduire par nos saveurs uniques. Nous serions ravis de vous accueillir et de partager avec vous notre passion pour la cuisine asiatique.</p>
+            <h3 data-translate="join_us">Rejoignez-nous</h3>
+            <p data-translate="join_p">Venez découvrir le Lac de l'Ouest et laissez-vous séduire par nos saveurs uniques.</p>
             
             <div class="awards">
                 <div class="award">
                     <i class="fas fa-award"></i>
-                    <p>Meilleur restaurant asiatique 2023</p>
+                    <p data-translate="award1">Meilleur restaurant asiatique 2023</p>
                 </div>
                 <div class="award">
                     <i class="fas fa-award"></i>
-                    <p>Certifié Authentic Asian Cuisine</p>
+                    <p data-translate="award2">Certifié Authentic Asian Cuisine</p>
                 </div>
             </div>
         </div>
@@ -115,34 +115,34 @@
     </section>
 
     <section id="contact" class="contact-section">
-        <h2 class="section-title">Contact & Réservations</h2>
+        <h2 class="section-title" data-translate="contact">Contact</h2>
         <div class="contact-container">
             <div class="contact-info">
-                <h3>Informations</h3>
-                <p><i class="fas fa-map-marker-alt"></i> 7 Rue de la Harpe, 75005 Paris (Saint-Michel)</p>
+                <h3 data-translate="information">Informations</h3>
+                <p><i class="fas fa-map-marker-alt"></i> <span data-translate="address">7 Rue de la Harpe, 75005 Paris (Saint-Michel)</span></p>
                 <p><i class="fas fa-phone"></i> 01 43 54 39 68</p>
-                <p><i class="fas fa-envelope"></i> lacdelouest@gmail.com</p>
+                <p><i class="fas fa-envelope"></i> contact@lacdelouest.com</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-tripadvisor"></i></a>
                 </div>
-                <h3>Horaires d'ouverture</h3>
-                <p>Lundi - Mardi: 11h - 23h30</p>
-                <p>Mercredi: Fermé</p>
-                <p>Jeudi - Dimanche: 11h - 23h30</p>
+                <h3 data-translate="opening_hours">Horaires d'ouverture</h3>
+                <p data-translate="mon_tue">Lundi - Mardi: 11h - 23h30</p>
+                <p data-translate="wed">Mercredi: Fermé</p>
+                <p data-translate="thu_sun">Jeudi - Dimanche: 11h - 23h30</p>
             </div>
             <div class="contact-form">
                 <form id="reservation-form">
-                    <h3>Réserver une table</h3>
+                    <h3 data-translate="book_table">Réserver une table</h3>
                     <div class="form-group">
-                        <input type="text" id="name" placeholder="Votre nom" required>
+                        <input type="text" id="name" placeholder="Votre nom" data-translate-placeholder="your_name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" placeholder="Votre email" required>
+                        <input type="email" id="email" placeholder="Votre email" data-translate-placeholder="your_email" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" id="phone" placeholder="Votre téléphone" required>
+                        <input type="tel" id="phone" placeholder="Votre téléphone" data-translate-placeholder="your_phone" required>
                     </div>
                     <div class="form-group">
                         <input type="date" id="date" required>
@@ -151,9 +151,9 @@
                         <input type="time" id="time" required>
                     </div>
                     <div class="form-group">
-                        <input type="number" id="guests" placeholder="Nombre de personnes" min="1" required>
+                        <input type="number" id="guests" placeholder="Nombre de personnes" data-translate-placeholder="number_guests" min="1" required>
                     </div>
-                    <button type="submit" class="btn">Réserver</button>
+                    <button type="submit" class="btn" data-translate="reserve">Réserver</button>
                 </form>
             </div>
         </div>
@@ -163,29 +163,30 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Lac de l'Ouest</h3>
-                <p>7 Rue de la Harpe, 75005 Paris</p>
-                <p>Cuisine asiatique authentique</p>
+                <p><i class="fas fa-map-marker-alt"></i> <span data-translate="address">7 Rue de la Harpe, 75005 Paris</span></p>
+                <p><i class="fas fa-phone"></i> 01 43 54 39 68</p>
+                <p data-translate="footer_desc">Cuisine asiatique authentique</p>
             </div>
             <div class="footer-section">
-                <h3>Liens rapides</h3>
+                <h3 data-translate="quick_links">Liens rapides</h3>
                 <ul>
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#galerie">Galerie</a></li>
-                    <li><a href="#apropos">À propos</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#accueil" data-translate="accueil">Accueil</a></li>
+                    <li><a href="#menu" data-translate="menu">Menu</a></li>
+                    <li><a href="#galerie" data-translate="galerie">Galerie</a></li>
+                    <li><a href="#apropos" data-translate="apropos">À propos</a></li>
+                    <li><a href="#contact" data-translate="contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Newsletter</h3>
+                <h3 data-translate="newsletter">Newsletter</h3>
                 <form id="newsletter-form">
-                    <input type="email" placeholder="Votre email" required>
+                    <input type="email" placeholder="Votre email" data-translate-placeholder="your_email" required>
                     <button type="submit"><i class="fas fa-paper-plane"></i></button>
                 </form>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2023 Restaurant Lac de l'Ouest. Tous droits réservés.</p>
+            <p>&copy; 2023 Restaurant Lac de l'Ouest. <span data-translate="rights">Tous droits réservés.</span></p>
         </div>
     </footer>
 
