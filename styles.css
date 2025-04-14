@@ -558,4 +558,33 @@ footer {
     .menu-items {
         grid-template-columns: 1fr;
     }
+
+    .about-content h3 {
+        margin: 20px 0 10px;
+        color: #d4af37;
+        font-size: 1.3rem;
+    }
+
+    .opening-hours-banner {
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 30px;
+        margin: 15px auto;
+        max-width: fit-content;
+        font-size: 1.1rem;
+    }
+    
+    .closed-day {
+        color: #d4af37;
+        font-weight: 600;
+    }
+    
+    /* Pour la version mobile */
+    @media (max-width: 768px) {
+        .opening-hours-banner {
+            font-size: 0.9rem;
+            padding: 8px 15px;
+        }
+    }
 }
