@@ -210,4 +210,105 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateOnScroll);
     // Appeler une première fois au chargement
     animateOnScroll();
+
+// Textes traduits
+const translations = {
+    fr: {
+        // Navigation
+        "accueil": "Accueil",
+        "menu": "Menu",
+        "galerie": "Galerie",
+        "apropos": "À propos",
+        "contact": "Contact",
+        
+        // Hero section
+        "welcome": "Bienvenue au Lac de l'Ouest",
+        "slogan": "Une expérience culinaire asiatique authentique au cœur de Paris",
+        "reserve": "Réserver une table",
+        
+        // Menu section
+        "our_menu": "Notre Menu",
+        "entrees": "Entrées",
+        "plats": "Plats principaux",
+        "desserts": "Desserts",
+        "boissons": "Boissons",
+        
+        // ... Ajoutez tous les autres textes à traduire ...
+    },
+    en: {
+        "accueil": "Home",
+        "menu": "Menu",
+        "galerie": "Gallery",
+        "apropos": "About",
+        "contact": "Contact",
+        "welcome": "Welcome to Lac de l'Ouest",
+        "slogan": "Authentic Asian culinary experience in the heart of Paris",
+        "reserve": "Book a table",
+        "our_menu": "Our Menu",
+        "entrees": "Starters",
+        "plats": "Main Courses",
+        "desserts": "Desserts",
+        "boissons": "Drinks"
+    },
+    zh: {
+        "accueil": "首页",
+        "menu": "菜单",
+        "galerie": "画廊",
+        "apropos": "关于我们",
+        "contact": "联系方式",
+        "welcome": "欢迎来到西湖餐厅",
+        "slogan": "巴黎市中心的正宗亚洲美食体验",
+        "reserve": "预订餐桌",
+        "our_menu": "我们的菜单",
+        "entrees": "前菜",
+        "plats": "主菜",
+        "desserts": "甜点",
+        "boissons": "饮料"
+    }
+};
+
+// Fonction de traduction
+function translatePage(lang) {
+    // Mettre à jour tous les éléments avec data-translate
+    document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+
+    // Mettre à jour le bouton de langue
+    document.getElementById('language-btn').textContent = lang.toUpperCase();
+    
+    // Sauvegarder la préférence de langue
+    localStorage.setItem('preferredLanguage', lang);
+    
+    // Mettre à jour la direction du texte pour le chinois
+    document.documentElement.dir = lang === 'zh' ? 'ltr' : 'ltr';
+    document.documentElement.lang = lang;
+}
+
+// Gestionnaire d'événements pour les boutons de langue
+document.querySelectorAll('.language-dropdown a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const lang = this.getAttribute('data-lang');
+        translatePage(lang);
+    });
+});
+
+// Au chargement de la page, vérifier la langue sauvegardée ou navigateur
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage');
+    const browserLang = navigator.language.substring(0, 2);
+    
+    if (savedLang) {
+        translatePage(savedLang);
+    } else if (browserLang === 'fr' || browserLang === 'en' || browserLang === 'zh') {
+        translatePage(browserLang);
+    } else {
+        translatePage('fr'); // Par défaut en français
+    }
+});
+
 });
