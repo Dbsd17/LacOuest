@@ -235,4 +235,37 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // ... reste du code existant (gestion du menu, formulaires, etc.) ...
+
+    // Fonction de traduction mise à jour
+    function translatePage(lang) {
+        // ... (votre code existant) ...
+        
+        // Mettre à jour les boutons actifs
+        document.getElementById('language-btn').textContent = lang.toUpperCase();
+        document.getElementById('language-btn').classList.add('active');
+        
+        // Supprimer toutes les classes actives
+        document.querySelectorAll('.language-dropdown a').forEach(link => {
+            link.classList.remove('active-fr', 'active-en', 'active-zh', 'active');
+        });
+        
+        // Ajouter la classe active correspondante
+        const activeLangClass = `active-${lang}`;
+        document.querySelector(`.language-dropdown a[data-lang="${lang}"]`).classList.add(activeLangClass, 'active');
+        
+        // ... (le reste de votre code existant) ...
+    }
+
+    // Au chargement de la page
+    document.addEventListener('DOMContentLoaded', function() {
+        // ... (votre code existant) ...
+        
+        // Initialiser le bouton actif
+        const initialLang = detectLanguage();
+        translatePage(initialLang);
+        
+        // ... (le reste de votre code existant) ...
+    });
+
+
 });

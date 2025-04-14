@@ -636,6 +636,54 @@ footer {
     display: block;
 }
 
+
+/* Mettez à jour ou ajoutez ces styles */
+.lang-btn {
+    background: transparent;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-width: 50px;
+    text-align: center;
+}
+
+.lang-btn.active {
+    background: rgba(212, 175, 55, 0.2);
+    border: 2px solid #d4af37;
+    color: #d4af37;
+}
+
+.language-dropdown a {
+    color: #333;
+    padding: 10px 15px;
+    display: block;
+    text-align: left;
+    border-radius: 5px;
+    margin: 5px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.language-dropdown a:hover, 
+.language-dropdown a.active {
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid #d4af37;
+    color: #d4af37;
+}
+
+/* Pour le bouton de langue actif dans le dropdown */
+.language-dropdown a[data-lang="fr"].active-fr,
+.language-dropdown a[data-lang="en"].active-en,
+.language-dropdown a[data-lang="zh"].active-zh {
+    background: rgba(212, 175, 55, 0.2);
+    border: 1px solid #d4af37;
+    font-weight: bold;
+}
+
 /* Version mobile */
 @media (max-width: 768px) {
     .language-switcher {
