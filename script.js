@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    
     // Menu burger
     const burger = document.querySelector('.burger');
     const navLinks = document.querySelector('.nav-links');
@@ -184,19 +185,35 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Mettre à jour le bouton de langue
-        document.getElementById('language-btn').textContent = lang.toUpperCase();
-        
-        // Sauvegarder la préférence de langue
-        localStorage.setItem('preferredLanguage', lang);
-        
-        // Mettre à jour les attributs de langue
-        document.documentElement.lang = lang;
-        
-        // Mettre à jour la classe active sur les liens de langue
-        document.querySelectorAll('.language-dropdown a').forEach(link => {
-            link.classList.remove('active-fr', 'active-en', 'active-zh');
-            if (link.getAttribute('data-lang') === lang) {
-                link.classList.add('active-' + lang);
-            }
-        });
+         // Mettre à jour le bouton principal
+         const langBtn = document.getElementById('language-btn');
+         if (langBtn) langBtn.textContent = lang.toUpperCase();
+ 
+         // Sauvegarder la préférence
+         localStorage.setItem('preferredLanguage', lang);
+ 
+         // Changer l'attribut de langue
+         document.documentElement.lang = lang;
+ 
+         // Gérer l'état actif des boutons
+         document.querySelectorAll('.language-dropdown a, .lang-btn').forEach(link => {
+             link.classList.remove('active-fr', 'active-en', 'active-zh');
+             if (link.getAttribute('data-lang') === lang) {
+                 link.classList.add('active-' + lang);
+             }
+         });
+     }
+ 
+     // Clics sur les boutons de langue
+     document.querySelectorAll('.language-dropdown a, .lang-btn').forEach(link => {
+         link.addEventListener('click', (e) => {
+             e.preventDefault();
+             const selectedLang = link.getAttribute('data-lang');
+             if (selectedLang) translatePage(selectedLang);
+         });
+     });
+ 
+     // Langue sauvegardée ou par défaut
+     const savedLang = localStorage.getItem('preferredLanguage') || 'fr';
+     translatePage(savedLang);
+ });
