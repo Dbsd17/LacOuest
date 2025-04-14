@@ -1,0 +1,243 @@
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f9f9f9, #fff3db);
+    padding-bottom: 20px;
+}
+
+/* Header */
+header {
+    background: #d4af37;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-top: 10px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Bouton de retour */
+.back-button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background-color: rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.back-button:hover {
+    background-color: rgba(0,0,0,0.25);
+    transform: translateX(-3px);
+}
+
+/* Menu Chinois */
+.menu-chinois {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-title {
+    font-size: 2.5rem;
+    color: #d4af37;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Sections du menu */
+.menu-section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #d4af37;
+    margin-bottom: 20px;
+    font-weight: 600;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f0e6c5;
+    text-transform: uppercase;
+}
+
+.subcategory-title {
+    font-size: 1.4rem;
+    color: #c0952e;
+    margin: 25px 0 15px;
+    font-weight: 600;
+    padding-left: 10px;
+    border-left: 4px solid #d4af37;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+/* Élément du menu */
+.menu-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    border-left: 4px solid #d4af37;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-content h3 {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 600;
+    margin-right: 15px;
+}
+
+.price {
+    color: #d4af37;
+    font-weight: 700;
+    font-size: 1.1rem;
+    white-space: nowrap;
+}
+
+/* Changement de langue */
+.language-switcher {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: inline-block;
+}
+
+.lang-btn {
+    background: rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    backdrop-filter: blur(5px);
+}
+
+.lang-btn:hover {
+    background: rgba(0,0,0,0.25);
+    transform: scale(1.05);
+}
+
+.language-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 120px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.language-dropdown a {
+    color: #333;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.language-dropdown a:hover {
+    background: #f5f5f5;
+    color: #d4af37;
+}
+
+.language-switcher:hover .language-dropdown {
+    display: block;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #d4af37;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 60px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-items {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-chinois {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .menu-title {
+        font-size: 2rem;
+    }
+    
+    .item-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .price {
+        margin-top: 5px;
+        align-self: flex-end;
+    }
+}

@@ -1,0 +1,210 @@
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f9f9f9, #fff3db);
+    padding-bottom: 20px;
+}
+
+/* Header */
+header {
+    background: #d4af37;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-top: 10px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Bouton de retour */
+.back-button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background-color: rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.back-button:hover {
+    background-color: rgba(0,0,0,0.25);
+    transform: translateX(-3px);
+}
+
+/* Contenu principal */
+.carte-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: #d4af37;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* Catégories */
+.category-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.category-card {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    border-top: 4px solid #d4af37;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.category-card h3 {
+    font-size: 1.5rem;
+    color: #d4af37;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.category-card p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.menu-btn {
+    display: inline-block;
+    background: #d4af37;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.menu-btn:hover {
+    background: #c0952e;
+    transform: scale(1.05);
+}
+
+/* Changement de langue */
+.language-switcher {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: inline-block;
+}
+
+.lang-btn {
+    background: rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    backdrop-filter: blur(5px);
+}
+
+.lang-btn:hover {
+    background: rgba(0,0,0,0.25);
+    transform: scale(1.05);
+}
+
+.language-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 120px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.language-dropdown a {
+    color: #333;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.language-dropdown a:hover {
+    background: #f5f5f5;
+    color: #d4af37;
+}
+
+.language-switcher:hover .language-dropdown {
+    display: block;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #d4af37;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .category-section {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+}

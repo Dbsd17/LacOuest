@@ -51,25 +51,25 @@
 
     <section id="menu" class="menu-section">
         <h2 class="section-title" data-translate="our_menu">Notre Menu</h2>
-        <div class="menu-tabs">
-            <button class="tab-btn active" data-category="entrees" data-translate="entrees">Entrées</button>
-            <button class="tab-btn" data-category="plats" data-translate="plats">Plats principaux</button>
-            <button class="tab-btn" data-category="desserts" data-translate="desserts">Desserts</button>
-            <button class="tab-btn" data-category="boissons" data-translate="boissons">Boissons</button>
+        <div class="menu-buttons">
+            <a href="menu-express.html" class="btn btn-menu" data-translate="express_menu">Menu Express Asiatique</a>
+            <a href="menu-gourmet.html" class="btn btn-menu" data-translate="gourmet_menu">Menu Gourmet Asiatique</a>
         </div>
-        
-        <div class="menu-items">
-            <!-- Les éléments du menu seront chargés dynamiquement via JS -->
-        </div>
+        <p class="menu-description" data-translate="menu_desc">Découvrez nos menus soigneusement préparés pour répondre à vos envies culinaires.</p>
     </section>
 
     </section> <!-- Fin de #menu -->
 
     <!-- SECTION CARTE -->
     <section id="carte" class="carte-section">
-        <h2 class="section-title" data-translate="full_menu_title">Notre Carte Complète</h2>
-        <p data-translate="full_menu_text">Consultez l’intégralité de notre carte, avec les prix et les descriptions.</p>
-        <a href="carte.pdf" target="_blank" class="btn btn-download" data-translate="download_pdf">Télécharger la carte (PDF)</a>
+        <div class="carte-container">
+            <h2 class="section-title" data-translate="full_menu_title">Notre Carte Complète</h2>
+            <p class="carte-description" data-translate="full_menu_text">Consultez l’intégralité de notre carte, avec les prix et les descriptions.</p>
+            <div class="carte-actions">
+                <a href="carte.html" class="btn btn-view" data-translate="view_menu">Consulter la carte</a>
+                <a href="carte.pdf" target="_blank" class="btn btn-download" data-translate="download_pdf">Télécharger la carte (PDF)</a>
+            </div>
+        </div>
     </section>
 
 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lac de l'Ouest - Notre Carte</title>
+    <link rel="stylesheet" href="carte.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-button" data-translate="back">← Retour</a>
+        <div class="language-switcher">
+            <button class="lang-btn" id="language-btn">FR</button>
+            <div class="language-dropdown">
+                <a href="#" data-lang="fr">Français</a>
+                <a href="#" data-lang="en">English</a>
+                <a href="#" data-lang="zh">中文</a>
+            </div>
+        </div>
+        <h1>Lac de l'Ouest</h1>
+    </header>
+
+    <main class="carte-container">
+        <h2 class="page-title" data-translate="our_menu">Notre Carte</h2>
+        
+        <section class="category-section">
+            <div class="category-card">
+                <h3 data-translate="thai_cuisine">Cuisine Thaïlandaise</h3>
+                <p data-translate="thai_description">Découvrez nos authentiques plats thaïlandais préparés avec des ingrédients frais et des épices traditionnelles. Une explosion de saveurs entre sucré, salé, acide et épicé.</p>
+                <a href="menu-thai.html" class="menu-btn" data-translate="view_thai">Voir la carte Thaï</a>
+            </div>
+
+            <div class="category-card">
+                <h3 data-translate="chinese_cuisine">Cuisine Chinoise</h3>
+                <p data-translate="chinese_description">Nos spécialités chinoises allient tradition et modernité. Des recettes ancestrales revisitées avec des produits de qualité pour une expérience culinaire raffinée.</p>
+                <a href="menu-chinois.html" class="menu-btn" data-translate="view_chinese">Voir la carte Chinoise</a>
+            </div>
+
+            <div class="category-card">
+                <h3 data-translate="vegetarian_cuisine">Plats Végétariens</h3>
+                <p data-translate="vegetarian_description">Une sélection de plats végétariens savoureux et équilibrés, préparés avec des légumes frais et des protéines végétales pour satisfaire tous les palais.</p>
+                <a href="menu-vegetarien.html" class="menu-btn" data-translate="view_vegetarian">Voir la carte Végétarienne</a>
+            </div>
+
+            <div class="category-card">
+                <h3 data-translate="grill_cuisine">Plats Garnis</h3>
+                <p data-translate="grill_description">Un plat garni est un plat principal complet, accompagné de riz, nouilles ou légumes, offrant un repas équilibré en une seule assiette. Nos plats garnis combinent viandes et légumes frais avec des accompagnements savoureux, pour une expérience culinaire authentique et équilibrée.</p>
+                <a href="menu-garnis.html" class="menu-btn" data-translate="view_grill">Voir la carte des plats garnis</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-translate="copyright">© 2023 Lac de l'Ouest - Tous droits réservés</p>
+    </footer>
+
+    <script src="carte.js"></script>
+</body>
+</html>
