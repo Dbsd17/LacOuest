@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
             
             "garnis_cuisine": "Plats Garnis",
             "garnis_description": "Un plat garni est un plat principal complet, accompagné de riz, nouilles ou légumes, offrant un repas équilibré en une seule assiette. Nos plats garnis combinent viandes et légumes frais avec des accompagnements savoureux, pour une expérience culinaire authentique et équilibrée.",
-            "view_garnis": "Voir la carte Garnie"
+            "view_garnis": "Voir la carte des plats garnis"
         },
         en: {
             // Interface
